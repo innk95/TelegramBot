@@ -44,7 +44,7 @@ def films(call):
                 bot.send_message(call.message.chat.id, 'Сейчас подгрузим фотку')
                 url = 'https://madagascarkino.ru/ticket/cheb/sale/get?performance=' + ticket['id']
                 screenshot = get_screenshot(url)
-                bot.send_photo(call.message.chat.id, screenshot, caption='Ну а дальше не работает) пока что')
+                bot.send_photo(call.message.chat.id, screenshot, caption='Красные места уже забронированны')
 
 
 
