@@ -36,9 +36,11 @@ def films(call):
                 k.add(types.InlineKeyboardButton(seance_name, callback_data=ticket['id']))
             bot.send_message(call.message.chat.id, 'На какое время?', reply_markup=k)
 
+
     for elem in json_data.get('ANS'):
         for ticket in elem['tickets']:
             if ticket['id'] == call.data:
+                print(call.data)
                 bot.send_message(call.message.chat.id, 'Сейчас подгрузим фотку')
                 url = 'https://madagascarkino.ru/ticket/cheb/sale/get?performance=' + ticket['id']
                 screenshot = get_screenshot(url)
